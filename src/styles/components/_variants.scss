@@ -1,4 +1,5 @@
 @use '../variables' as *;
+@use '../mixins' as *;
 
 .variants {
   display: grid;
@@ -50,8 +51,10 @@
       color $transition;
   }
 
-  &__input:hover + &__label {
-    border-color: $color-border-strong;
+  @media (hover: hover) {
+    &__input:hover + &__label {
+      border-color: $color-border-strong;
+    }
   }
 
   &__input:checked + &__label {

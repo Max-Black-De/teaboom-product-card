@@ -1,4 +1,5 @@
 @use '../variables' as *;
+@use '../mixins' as *;
 
 .button {
   position: relative;
@@ -30,8 +31,15 @@
     transition: transform $transition;
   }
 
-  &:hover,
   &:focus-visible {
+    border-color: $color-accent;
+
+    &::before {
+      transform: scaleY(1);
+    }
+  }
+
+  @include hover {
     border-color: $color-accent;
 
     &::before {
