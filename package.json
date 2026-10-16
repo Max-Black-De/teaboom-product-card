@@ -7,13 +7,14 @@
     "node": ">=22"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "sass --watch --no-source-map src/styles/main.scss:css/main.css & vite",
+    "build": "npm run build:css && node scripts/build.mjs",
     "preview": "vite preview",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint .",
     "lint:css": "stylelint \"src/**/*.scss\"",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "build:css": "sass --no-source-map src/styles/main.scss css/main.css"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
