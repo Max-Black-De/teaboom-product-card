@@ -7,17 +7,18 @@
     "node": ">=22"
   },
   "scripts": {
-    "dev": "sass --watch --no-source-map src/styles/main.scss:css/main.css & vite",
+    "dev": "concurrently --kill-others --names sass,vite --prefix-colors magenta,cyan \"sass --watch --no-source-map src/styles/main.scss:css/main.css\" \"vite\"",
     "build": "npm run build:css && node scripts/build.mjs",
+    "build:css": "sass --no-source-map src/styles/main.scss css/main.css",
     "preview": "vite preview",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint .",
     "lint:css": "stylelint \"src/**/*.scss\"",
-    "format": "prettier --write .",
-    "build:css": "sass --no-source-map src/styles/main.scss css/main.css"
+    "format": "prettier --write ."
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "concurrently": "10.0.6",
     "eslint": "^10.12.0",
     "globals": "^17.13.0",
     "prettier": "^3.9.10",

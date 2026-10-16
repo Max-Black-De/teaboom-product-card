@@ -4,7 +4,7 @@
 
 **Демо:** https://max-black-de.github.io/teaboom-product-card/
 
-Стек: HTML5, SCSS, чистый JavaScript (без фреймворков), Vite как лёгкий сборщик.
+Стек: HTML5, SCSS, чистый JavaScript (без фреймворков). Сборка — компиляция SCSS (sass) и скрипт копирования в `dist/`; Vite используется только как дев-сервер.
 
 ## Запуск
 
@@ -25,15 +25,16 @@ npm run preview   # просмотр dist/
 
 ## Скрипты
 
-| Скрипт     | Что делает                                 |
-| ---------- | ------------------------------------------ |
-| `dev`      | дев-сервер Vite                            |
-| `build`    | продакшн-сборка в `dist/`                  |
-| `preview`  | локальный просмотр сборки                  |
-| `lint`     | ESLint + Stylelint                         |
-| `lint:js`  | ESLint (flat config, recommended)          |
-| `lint:css` | Stylelint (stylelint-config-standard-scss) |
-| `format`   | Prettier                                   |
+| Скрипт      | Что делает                                                                                                                                                  |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `dev`       | `sass --watch` и дев-сервер Vite параллельно через concurrently (работает и в Windows). `--kill-others`: остановили один процесс — останавливается и второй |
+| `build`     | `build:css`, затем `scripts/build.mjs` копирует `index.html`, `css`, `js`, `img` в `dist/` (для GitHub Pages)                                               |
+| `build:css` | компиляция `src/styles/main.scss` в `css/main.css` (файл коммитится)                                                                                        |
+| `preview`   | локальный просмотр `dist/` через Vite                                                                                                                       |
+| `lint`      | `lint:js` + `lint:css`                                                                                                                                      |
+| `lint:js`   | ESLint (flat config, recommended)                                                                                                                           |
+| `lint:css`  | Stylelint (stylelint-config-standard-scss + правило BEM)                                                                                                    |
+| `format`    | Prettier                                                                                                                                                    |
 
 ## Структура
 
