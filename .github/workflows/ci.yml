@@ -26,6 +26,13 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run build
+      - name: Check committed css/ is up to date
+        run: |
+          # build уже пересобрал css/ через build:css; закоммиченный файл должен совпадать
+          if ! git diff --exit-code -- css/; then
+            echo "::error file=css/main.css::css/main.css устарел: выполните 'npm run build:css' и закоммитьте результат"
+            exit 1
+          fi
       - if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v3
         with:
