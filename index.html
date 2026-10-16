@@ -11,14 +11,19 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap"
     />
-    <link rel="stylesheet" href="/src/styles/main.scss" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="./js/main.js" defer></script>
   </head>
   <body>
     <main class="page">
       <nav class="breadcrumbs" aria-label="Хлебные крошки">
         <ol class="breadcrumbs__list">
-          <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Каталог</a></li>
-          <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Улун</a></li>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="https://teaboom.ru/category-root">Каталог</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="https://teaboom.ru/category-ulun">Улун</a>
+          </li>
           <li class="breadcrumbs__item" aria-current="page">Ананасовый улун</li>
         </ol>
       </nav>
@@ -29,7 +34,7 @@
             <img
               class="gallery__image"
               src="./img/tea-1.webp"
-              alt="Сухой лист ананасового улуна с цукатами"
+              alt="Ананасовый улун: сухой лист с цукатами ананаса крупным планом"
               width="970"
               height="970"
               fetchpriority="high"
@@ -41,7 +46,8 @@
                 class="gallery__thumb"
                 type="button"
                 aria-pressed="true"
-                aria-label="Фото 1 из 4"
+                aria-label="Показать фото 1 из 4"
+                data-alt="Ананасовый улун: сухой лист с цукатами ананаса крупным планом"
                 data-src="./img/tea-1.webp"
                 data-width="970"
                 data-height="970"
@@ -49,7 +55,7 @@
                 <img
                   class="gallery__thumb-image"
                   src="./img/tea-1-thumb.webp"
-                  alt="Сухой лист ананасового улуна с цукатами"
+                  alt=""
                   width="240"
                   height="240"
                   loading="lazy"
@@ -61,7 +67,8 @@
                 class="gallery__thumb"
                 type="button"
                 aria-pressed="false"
-                aria-label="Фото 2 из 4"
+                aria-label="Показать фото 2 из 4"
+                data-alt="Скрученный лист улуна с кусочками цукатов"
                 data-src="./img/tea-2.webp"
                 data-width="856"
                 data-height="849"
@@ -69,7 +76,7 @@
                 <img
                   class="gallery__thumb-image"
                   src="./img/tea-2-thumb.webp"
-                  alt="Скрученный лист улуна с кусочками цукатов"
+                  alt=""
                   width="240"
                   height="238"
                   loading="lazy"
@@ -81,7 +88,8 @@
                 class="gallery__thumb"
                 type="button"
                 aria-pressed="false"
-                aria-label="Фото 3 из 4"
+                aria-label="Показать фото 3 из 4"
+                data-alt="Плотно скрученные листья светлого улуна"
                 data-src="./img/tea-3.webp"
                 data-width="775"
                 data-height="777"
@@ -89,7 +97,7 @@
                 <img
                   class="gallery__thumb-image"
                   src="./img/tea-3-thumb.webp"
-                  alt="Плотно скрученные листья светлого улуна"
+                  alt=""
                   width="239"
                   height="240"
                   loading="lazy"
@@ -101,7 +109,8 @@
                 class="gallery__thumb"
                 type="button"
                 aria-pressed="false"
-                aria-label="Фото 4 из 4"
+                aria-label="Показать фото 4 из 4"
+                data-alt="Лист улуна с оранжевыми цукатами ананаса"
                 data-src="./img/tea-4.webp"
                 data-width="799"
                 data-height="785"
@@ -109,7 +118,7 @@
                 <img
                   class="gallery__thumb-image"
                   src="./img/tea-4-thumb.webp"
-                  alt="Лист улуна с оранжевыми цукатами ананаса"
+                  alt=""
                   width="240"
                   height="236"
                   loading="lazy"
@@ -226,6 +235,5 @@
         </div>
       </article>
     </main>
-    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
