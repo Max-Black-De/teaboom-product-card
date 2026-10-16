@@ -5,36 +5,225 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Карточка товара «Ананасовый улун» — Teaboom" />
     <title>Ананасовый улун — Teaboom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap"
+    />
     <link rel="stylesheet" href="/src/styles/main.scss" />
   </head>
   <body>
     <main class="page">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <ol class="breadcrumbs__list">
+          <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Каталог</a></li>
+          <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Улун</a></li>
+          <li class="breadcrumbs__item" aria-current="page">Ананасовый улун</li>
+        </ol>
+      </nav>
+
       <article class="product" aria-labelledby="product-title">
-        <section class="product__gallery" aria-label="Фото товара">
-          <!-- TODO(Фронтенд): изображение товара -->
+        <section class="product__gallery gallery" aria-label="Фото товара">
+          <figure class="gallery__main">
+            <img
+              class="gallery__image"
+              src="./img/tea-1.webp"
+              alt="Сухой лист ананасового улуна с цукатами"
+              width="970"
+              height="970"
+              fetchpriority="high"
+            />
+          </figure>
+          <ul class="gallery__thumbs">
+            <li class="gallery__thumb-item">
+              <button
+                class="gallery__thumb"
+                type="button"
+                aria-pressed="true"
+                aria-label="Фото 1 из 4"
+                data-src="./img/tea-1.webp"
+                data-width="970"
+                data-height="970"
+              >
+                <img
+                  class="gallery__thumb-image"
+                  src="./img/tea-1-thumb.webp"
+                  alt="Сухой лист ананасового улуна с цукатами"
+                  width="240"
+                  height="240"
+                  loading="lazy"
+                />
+              </button>
+            </li>
+            <li class="gallery__thumb-item">
+              <button
+                class="gallery__thumb"
+                type="button"
+                aria-pressed="false"
+                aria-label="Фото 2 из 4"
+                data-src="./img/tea-2.webp"
+                data-width="856"
+                data-height="849"
+              >
+                <img
+                  class="gallery__thumb-image"
+                  src="./img/tea-2-thumb.webp"
+                  alt="Скрученный лист улуна с кусочками цукатов"
+                  width="240"
+                  height="238"
+                  loading="lazy"
+                />
+              </button>
+            </li>
+            <li class="gallery__thumb-item">
+              <button
+                class="gallery__thumb"
+                type="button"
+                aria-pressed="false"
+                aria-label="Фото 3 из 4"
+                data-src="./img/tea-3.webp"
+                data-width="775"
+                data-height="777"
+              >
+                <img
+                  class="gallery__thumb-image"
+                  src="./img/tea-3-thumb.webp"
+                  alt="Плотно скрученные листья светлого улуна"
+                  width="239"
+                  height="240"
+                  loading="lazy"
+                />
+              </button>
+            </li>
+            <li class="gallery__thumb-item">
+              <button
+                class="gallery__thumb"
+                type="button"
+                aria-pressed="false"
+                aria-label="Фото 4 из 4"
+                data-src="./img/tea-4.webp"
+                data-width="799"
+                data-height="785"
+              >
+                <img
+                  class="gallery__thumb-image"
+                  src="./img/tea-4-thumb.webp"
+                  alt="Лист улуна с оранжевыми цукатами ананаса"
+                  width="240"
+                  height="236"
+                  loading="lazy"
+                />
+              </button>
+            </li>
+          </ul>
         </section>
 
-        <section class="product__info">
-          <p class="product__category"><!-- TODO: категория --></p>
-          <h1 class="product__title" id="product-title">Ананасовый улун</h1>
+        <div class="product__info">
+          <header class="product__header">
+            <p class="product__category">Улун</p>
+            <h1 class="product__title" id="product-title">Ананасовый улун</h1>
+          </header>
 
-          <fieldset class="product__variants">
-            <legend>Фасовка</legend>
-            <!-- TODO: radio-кнопки фасовок (данные в src/main.js) -->
-          </fieldset>
+          <form class="product__form" action="#" aria-label="Покупка">
+            <fieldset class="variants">
+              <legend class="variants__legend">Фасовка</legend>
+              <div class="variants__list">
+                <label class="variants__chip">
+                  <input
+                    class="variants__input"
+                    type="radio"
+                    name="variant"
+                    value="100"
+                    data-sku="01306"
+                    data-price="326.40"
+                    data-old-price="349.20"
+                    checked
+                  />
+                  <span class="variants__label">100 г</span>
+                </label>
+                <label class="variants__chip">
+                  <input
+                    class="variants__input"
+                    type="radio"
+                    name="variant"
+                    value="500"
+                    data-sku="01307"
+                    data-price="1432"
+                    data-old-price="1646"
+                  />
+                  <span class="variants__label">500 г</span>
+                </label>
+                <label class="variants__chip">
+                  <input
+                    class="variants__input"
+                    type="radio"
+                    name="variant"
+                    value="1000"
+                    data-sku="01308"
+                    data-price="2064"
+                    data-old-price="2592"
+                  />
+                  <span class="variants__label">1000 г</span>
+                </label>
+                <label class="variants__chip">
+                  <input
+                    class="variants__input"
+                    type="radio"
+                    name="variant"
+                    value="5000"
+                    data-sku="01309"
+                    data-price="6320"
+                    data-old-price="8710"
+                  />
+                  <span class="variants__label">5000 г</span>
+                </label>
+              </div>
+            </fieldset>
 
-          <p class="product__sku"><!-- TODO: артикул --></p>
+            <p class="product__sku">
+              Артикул: <span class="product__sku-value" data-role="sku">01306</span>
+            </p>
 
-          <div class="product__price">
-            <!-- TODO: актуальная цена и старая цена (<s>) -->
-          </div>
+            <div class="price" data-role="price-block">
+              <data class="price__current" value="326.40" data-role="price">326,40&nbsp;₽</data>
+              <s class="price__old" data-role="old-price-wrap">
+                <span class="visually-hidden">Старая цена:</span>
+                <data value="349.20" data-role="old-price">349,20&nbsp;₽</data>
+              </s>
+              <span class="price__badge" data-role="discount">−7&#8239;%</span>
+            </div>
+            <p class="visually-hidden" aria-live="polite" data-role="announcer"></p>
 
-          <button class="product__buy" type="button">В корзину</button>
+            <button class="button product__buy" type="submit">В корзину</button>
+          </form>
 
-          <section class="product__description" aria-label="Описание">
-            <!-- TODO: короткое описание -->
+          <section class="product__about" aria-labelledby="about-title">
+            <h2 class="product__subtitle" id="about-title">Коротко о чае</h2>
+            <p class="product__description">
+              Светлый улун из провинции Фуцзянь (Китай) с цукатами и яркой ананасовой нотой. Крупные
+              плотно скрученные листочки дают прозрачный настой светло-янтарного цвета.
+            </p>
+            <dl class="specs">
+              <div class="specs__row">
+                <dt class="specs__term">Происхождение</dt>
+                <dd class="specs__value">Китай, Фуцзянь</dd>
+              </div>
+              <div class="specs__row">
+                <dt class="specs__term">Форма листа</dt>
+                <dd class="specs__value">Крупные, плотно скрученные</dd>
+              </div>
+              <div class="specs__row">
+                <dt class="specs__term">Заваривание</dt>
+                <dd class="specs__value">2 ч. л. на 500 мл, 80–85 °C, 1–3 мин</dd>
+              </div>
+              <div class="specs__row">
+                <dt class="specs__term">Кофеин</dt>
+                <dd class="specs__value">Среднее содержание</dd>
+              </div>
+            </dl>
           </section>
-        </section>
+        </div>
       </article>
     </main>
     <script type="module" src="/src/main.js"></script>

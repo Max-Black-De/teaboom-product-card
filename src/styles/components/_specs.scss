@@ -1,0 +1,22 @@
+@use '../variables' as *;
+
+.specs {
+  display: grid;
+  gap: $space-1;
+  margin: 0;
+
+  &__row {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: $space-2;
+  }
+
+  &__term {
+    color: $color-text-secondary;
+  }
+
+  &__value {
+    margin: 0;
+    color: $color-heading;
+  }
+}

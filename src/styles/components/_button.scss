@@ -1,0 +1,45 @@
+@use '../variables' as *;
+
+.button {
+  position: relative;
+  z-index: 0;
+  min-height: $tap-target;
+  padding: $space-1 $space-4;
+  overflow: hidden;
+  border: $border-width solid $color-border-strong;
+  font-size: $font-size-s;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-caps;
+  color: $color-heading;
+  text-transform: uppercase;
+  background: transparent;
+  cursor: pointer;
+  transition:
+    border-color $transition,
+    color $transition;
+
+  // Жёлтая заливка снизу вверх, как .btn.hover-theme на сайте
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: $color-accent;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform $transition;
+  }
+
+  &:hover,
+  &:focus-visible {
+    border-color: $color-accent;
+
+    &::before {
+      transform: scaleY(1);
+    }
+  }
+
+  &:active::before {
+    filter: brightness(0.95);
+  }
+}

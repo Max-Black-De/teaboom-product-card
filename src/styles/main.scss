@@ -1,10 +1,10 @@
 @use 'variables' as *;
 @use 'reset';
-
-body {
-  font-family: $font-base;
-  font-size: 14px;
-  line-height: 24px;
-  color: $color-text;
-  background: $color-bg;
-}
+@use 'base';
+@use 'components/breadcrumbs';
+@use 'components/product';
+@use 'components/gallery';
+@use 'components/variants';
+@use 'components/price';
+@use 'components/button';
+@use 'components/specs';

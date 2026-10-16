@@ -1,0 +1,67 @@
+@use '../variables' as *;
+
+.variants {
+  display: grid;
+  gap: $space-1;
+
+  &__legend {
+    margin-bottom: $space-1;
+    font-weight: $font-weight-semibold;
+    color: $color-heading;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: $space-1;
+
+    @media (width >= $bp-tablet) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  &__chip {
+    position: relative;
+    display: block;
+  }
+
+  &__input {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: $tap-target;
+    padding-inline: $space-2;
+    border: $border-width solid $color-border;
+    border-radius: $radius-pill;
+    font-weight: $font-weight-semibold;
+    color: $color-text;
+    background: $color-white;
+    transition:
+      border-color $transition,
+      background-color $transition,
+      color $transition;
+  }
+
+  &__input:hover + &__label {
+    border-color: $color-border-strong;
+  }
+
+  &__input:checked + &__label {
+    border-color: $color-accent;
+    color: $color-heading;
+    background: $color-accent;
+  }
+
+  &__input:focus-visible + &__label {
+    outline: $focus-width solid $color-focus;
+    outline-offset: $focus-width;
+  }
+}

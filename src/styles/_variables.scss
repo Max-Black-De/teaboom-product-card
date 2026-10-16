@@ -4,11 +4,49 @@ $color-heading: #202020;
 $color-text: #444;
 $color-text-secondary: #606060;
 $color-border: #d0d0d0;
+$color-border-strong: #626262;
 $color-bg: #fbfbfb;
 $color-bg-light: #f6f7f8;
 $color-white: #fff;
+$color-focus: $color-heading;
+
+// Типографика: база сайта 14/24, шкала 14 → 16 → 20 → 32
 $font-base: 'Open Sans', sans-serif;
+$font-size-s: 14px;
+$font-size-m: 16px;
+$font-size-l: 20px;
+$font-size-xl: 32px;
+$font-size-xxl: 40px;
+$line-height-base: 24px;
+$line-height-tight: 1.2;
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$letter-spacing-caps: 0.08em;
+
+// Сетка с шагом 8px
+$space: 8px;
+$space-1: $space;
+$space-2: $space * 2;
+$space-3: $space * 3;
+$space-4: $space * 4;
+$space-5: $space * 5;
+$space-6: $space * 6;
+$space-8: $space * 8;
+
+// Размеры и оформление
+$container-width: 1200px;
+$thumb-size: $space * 10;
+$tap-target: $space * 6;
+$border-width: 1px;
+$focus-width: 2px;
+$radius: 4px;
+$radius-pill: 50px;
 $shadow-card: 0 5px 15px rgb(0 0 0 / 10%);
-$transition: 0.3s;
+$transition: 0.3s ease;
+
+// Брейкпоинты
 $bp-tablet: 768px;
-$bp-desktop: 1440px;
+$bp-desktop: 1200px;
+$buy-min-width: $space * 30;

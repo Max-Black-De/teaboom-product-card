@@ -1,0 +1,46 @@
+@use 'variables' as *;
+
+body {
+  font-family: $font-base;
+  font-size: $font-size-s;
+  line-height: $line-height-base;
+  color: $color-text;
+  background: $color-bg;
+}
+
+:focus-visible {
+  outline: $focus-width solid $color-focus;
+  outline-offset: $focus-width;
+}
+
+.page {
+  max-width: $container-width;
+  margin-inline: auto;
+  padding: $space-2;
+
+  @media (width >= $bp-tablet) {
+    padding: $space-4;
+  }
+
+  @media (width >= $bp-desktop) {
+    padding-block: $space-6;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

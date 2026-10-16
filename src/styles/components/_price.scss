@@ -1,0 +1,32 @@
+@use '../variables' as *;
+
+.price {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-1 $space-2;
+  align-items: baseline;
+
+  &__current {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-tight;
+    color: $color-heading;
+  }
+
+  &__old {
+    font-size: $font-size-m;
+    color: $color-text-secondary;
+  }
+
+  &__badge {
+    padding: 0 $space-1;
+    border-radius: $radius;
+    font-weight: $font-weight-bold;
+    color: $color-heading;
+    background: $color-accent;
+  }
+
+  [hidden] {
+    display: none;
+  }
+}

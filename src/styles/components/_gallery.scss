@@ -1,0 +1,57 @@
+@use '../variables' as *;
+
+.gallery {
+  display: grid;
+  gap: $space-2;
+  align-content: start;
+
+  &__main {
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: $color-white;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__thumbs {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, $thumb-size));
+    gap: $space-1;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media (width >= $bp-tablet) {
+      gap: $space-2;
+    }
+  }
+
+  &__thumb {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: $focus-width solid transparent;
+    border-radius: $radius;
+    background: $color-white;
+    cursor: pointer;
+    transition: border-color $transition;
+
+    &:hover {
+      border-color: $color-border;
+    }
+
+    &[aria-pressed='true'] {
+      border-color: $color-accent;
+    }
+  }
+
+  &__thumb-image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+  }
+}
